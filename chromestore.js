@@ -437,7 +437,7 @@ var FileWriter = (function (filesystem) {
         msg = 'Unknown Error';
         break;
     };
-    console.log('Error: ' + msg);
+    console.error('FS Error: ' + msg);
   }
 
   return {
@@ -459,7 +459,7 @@ var FileWriter = (function (filesystem) {
         fileEntry.createWriter(function (fileWriter) {
 
           fileWriter.onwriteend = function (e) {
-            // console.log('Write completed.');
+            console.log('Write completed.');
             if (callback) { callback(fileEntry); }
           };
 
